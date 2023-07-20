@@ -3,7 +3,8 @@ import Image from "next/image";
 import React from "react";
 
 interface Props {
-  movie: Movie;
+  // movie: Movie | DocumentData; when using firebase
+  movie: Movie
 }
 export default function Thumbnail({ movie }: Props) {
   return (
