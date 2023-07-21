@@ -9,7 +9,7 @@ interface Inputs {
   password: string;
 }
 
-function login() {
+function Login() {
   const [login, setLogin] = useState(false);
   const {signIn, signUp} = useAuth()
   const {
@@ -86,6 +86,6 @@ function login() {
   );
 }
 
-export default login;
+export default Login;
 
 //file system routing
