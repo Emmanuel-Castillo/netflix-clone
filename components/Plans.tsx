@@ -50,9 +50,9 @@ export default function Plans() {
 
         <div className="mt-4 flex flex-col space-y-4">
             <div className="flex w-full items-center justify-end self-end md:w-3/5">
-                <div className="planBox"></div>
-                <div className="planBox"></div>
-                <div className="planBox"></div>
+                <div className="planBox">standard</div>
+                <div className="planBox">standard</div>
+                <div className="planBox">standard</div>
             </div>
 
 {/* table */}
