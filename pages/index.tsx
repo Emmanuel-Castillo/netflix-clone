@@ -4,7 +4,7 @@ import requests from "@/utils/request";
 import { Movie } from "@/typings";
 import Row from "@/components/Row";
 import useAuth from "@/hooks/useAuth";
-import { useRecoilValue } from "recoil";
+import { constSelector, useRecoilValue } from "recoil";
 import { modalState } from "@/atoms/modalAtom";
 import Modal from "@/components/Modal";
 import Plans from "@/components/Plans";
@@ -32,8 +32,8 @@ comedyMovies,
 horrorMovies,
 romanceMovies,
 documentaries,
-products }: Props) => {
-  console.log(products)
+products, 
+}: Props) => {
   const {logout, loading} = useAuth()
   const showModal = useRecoilValue(modalState)
   const subscription = false
@@ -65,12 +65,11 @@ products }: Props) => {
 export default Home;
 
 export const getServerSideProps = async () => {
+  console.log(payments)
   const products = await getProducts(payments , {
     includePrices: true,
     activeOnly: true
-  })
-  .then((res) => res)
-  .catch((error) => console.log(error.message))
+  }).catch((error) => console.log(error.message))
 
   const [
     netflixOriginals,

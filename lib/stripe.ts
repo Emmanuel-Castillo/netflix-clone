@@ -12,6 +12,8 @@ const payments = getStripePayments(app, {
   customersCollection: "customers",
 });
 
+
+
 const loadCheckout = async (priceId: string) => {
   await createCheckoutSession(payments, {price: priceId, success_url: window.location.origin,
   cancel_url: window.location.origin,})
