@@ -34,6 +34,7 @@ romanceMovies,
 documentaries,
 products, 
 }: Props) => {
+  console.log(products)
   const {logout, loading} = useAuth()
   const showModal = useRecoilValue(modalState)
   const subscription = false
@@ -69,7 +70,9 @@ export const getServerSideProps = async () => {
   const products = await getProducts(payments , {
     includePrices: true,
     activeOnly: true
-  }).catch((error) => console.log(error.message))
+  })
+  .then((results) => results)
+  .catch((error) => console.log(error.message))
 
   const [
     netflixOriginals,
